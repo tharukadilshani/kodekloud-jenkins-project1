@@ -3,18 +3,18 @@ pipeline {
 
     stages {
 
+        stage('Chrckout'){
+            steps{
+                git url: 'https://github.com/tharukadilshani/kodekloud-jenkins-project1', branch: 'main'
+                sh "ls -ltr"
+            }
+        }
+
 
         stage('Setup') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'server-creds', usernameVariable: "myuser", passwordVariable: "mypassword")]) {
-
-                    sh '''
-                    echo ${myuser}
-                    echo ${mypassword}
-                    '''
-                }
-
-                sh "pip install -r requirements.txt"
+           
+               sh "pip install -r requirements.txt"
             
             }
         }
