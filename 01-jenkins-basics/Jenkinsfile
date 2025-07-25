@@ -11,20 +11,20 @@ pipeline {
         }
 
 
-        stage('Setup') {
+        //stage('Setup') {
             steps {
            
                sh "pip3 install -r requirements.txt"
             
             }
         }
-        stage('Test') {
+        //stage('Test') {
             steps {
                 sh "pytest"
                 
             }
         }    
-        stage('Deployment') {
+        //stage('Deployment') {
             input {
                 message "Do you want to proceed further?"
                 ok "Yes"
