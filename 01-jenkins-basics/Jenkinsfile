@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Chrckout'){
+        stage('Checkout'){
             steps{
                 git url: 'https://github.com/tharukadilshani/kodekloud-jenkins-project1', branch: 'main'
                 sh "ls -ltr"
